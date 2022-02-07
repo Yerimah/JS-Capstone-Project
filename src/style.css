@@ -17,6 +17,10 @@ header {
 
 }
 
+.logoImg {
+  height: 60px;
+}
+
 .navlist {
   display: flex;
   list-style-type: none;
@@ -27,6 +31,9 @@ header {
 
 .nav-items {
   color: white;
-  text-decoration: none;
-  
+  text-decoration: none; 
+}
+
+.nav-items:hover {
+  color: green;
 }
