@@ -14,7 +14,6 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 30px 50px 0 50px;
-
 }
 
 .logoImg {
@@ -26,12 +25,11 @@ header {
   list-style-type: none;
   gap: 50px;
   font-size: 24px;
-
 }
 
 .nav-items {
   color: white;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .nav-items:hover {
