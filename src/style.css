@@ -40,7 +40,6 @@ header {
 }
 
 footer {
-  position: fixed;
   bottom: 0;
   left: 25%;
   color: white;
@@ -94,6 +93,11 @@ input[type='submit'] {
 
 /* ///// COMMENTS POP-UP ///// */
 
+.top-container {
+  padding-top: 30px;
+  padding-bottom: 25px;
+}
+
 .comments-wrapper {
   background-color: rgba(34, 34, 34, 0.25);
 }
@@ -106,13 +110,13 @@ input[type='submit'] {
 }
 
 .tv-show-image {
-  width: 80%;
-  max-width: 500px;
+  width: 60%;
+  max-width: 400px;
 }
 
 .download-btn {
-  width: 80%;
-  max-width: 500px;
+  width: 60%;
+  max-width: 400px;
   margin-top: 10px;
   background-color: green;
   border: none;
@@ -122,27 +126,65 @@ input[type='submit'] {
   font-weight: 700;
 }
 
+.close-btn {
+  background: none;
+  border: none;
+  color: green;
+  font-weight: 700;
+  font-size: 3em;
+  position: absolute;
+  right: 0;
+  padding-right: 5%;
+  margin-bottom: 10px;
+}
+
 .tv-show-info {
-  padding: 10%;
+  margin-top: 30px;
+  padding: 0 20%;
 }
 
 .tv-show-title {
   font-size: 25px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .tv-shows-genres {
-  margin-bottom: 20px;
-} 
+  margin-bottom: 25px;
+}
 
 .lang-and-rating {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .summary-div {
   text-align: justify;
 }
 
+/* [MEDIA QUERIES] COMMENTS POP-UP */
 
+@media only screen and (min-width: 800px) {
+  .top-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin-left: 10px;
+  }
+
+  .tv-show-info {
+    margin-top: 0;
+    padding: 20px 5% 0 0;
+    max-width: 550px;
+  }
+
+  .tv-show-image {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .download-btn {
+    width: 100%;
+  }
+}
