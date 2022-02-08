@@ -8,4 +8,4 @@ const fetchMovies = async () => {
 
   return allMovies;
 };
-export default fetchMovies;
+export {fetchMovies, MoviesApi};
