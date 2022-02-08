@@ -1,7 +1,37 @@
-body {
-  background-color: bisque;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.hello {
-  color: red;
+body {
+  background-color: black;
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 50px 0 50px;
+}
+
+.logoImg {
+  height: 60px;
+}
+
+.navlist {
+  display: flex;
+  list-style-type: none;
+  gap: 50px;
+  font-size: 24px;
+}
+
+.nav-items {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-items:hover {
+  color: green;
 }
