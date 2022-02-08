@@ -12,6 +12,10 @@ const starter = async () => {
   
   starter();
 
-// / const involvementApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Rddf0xwSVTLNIiHbS9z7';
-// const MoviesApi = 'https://api.tvmaze.com/shows?page=1';
-// export { involvementApi, MoviesApi };
+// import { displayData } from './modules/reservation.js';
+// // import { involvementApi, MoviesApi } from './modules/utils.js';
+
+// document.querySelector('.logo').innerHTML = `<a href="#"><img class="logoImg" src="${logoImage}" alt="Cinimash" /></a>`;
+// window.addEventListener('DOMContentLoaded', () => {
+//   displayData(2);
+// });
