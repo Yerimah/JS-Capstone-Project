@@ -1,4 +1,4 @@
-const MoviesApi = 'https://api.tvmaze.com/shows';
+import {MoviesApi} from './utils.js';
 
 // eslint-disable-next-line import/prefer-default-export
 export const displayData = async (id) => {
