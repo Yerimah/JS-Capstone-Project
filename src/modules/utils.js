@@ -8,4 +8,4 @@ const fetchMovies = async () => {
 
   return allMovies;
 };
-export {fetchMovies, MoviesApi};
+export { fetchMovies, MoviesApi };
