@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -38,9 +39,9 @@ header {
 }
 
 footer {
- position: fixed;
- bottom: 0;
- left: 25%;
+  position: fixed;
+  bottom: 0;
+  left: 25%;
   color: white;
 }
 
@@ -67,10 +68,12 @@ footer {
 .news {
   text-align: center;
 }
-input[type='email']{
+
+input[type='email'] {
   padding: 10px;
 }
-input[type='submit']{
+
+input[type='submit'] {
   background: rgb(240, 8, 8);
   border: none;
   color: white;
@@ -80,6 +83,7 @@ input[type='submit']{
 .list {
   list-style-type: none;
 }
+
 .social {
   display: flex;
   padding-top: 20px;
