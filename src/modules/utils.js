@@ -3,10 +3,9 @@
 // export { involvementApi, MoviesApi };
 
 const fetchMovies = async () => {
-     const response = await fetch('https://api.tvmaze.com/shows');
-     const allMovies = await response.json();
+  const response = await fetch('https://api.tvmaze.com/shows');
+  const allMovies = await response.json();
 
-     return allMovies;
-}
- export default fetchMovies;
-
+  return allMovies;
+};
+export default fetchMovies;
