@@ -50,11 +50,6 @@ header {
   flex-direction: column;
 }
 
-.subtitles {
-  display: flex;
-  justify-content: space-between;
-}
-
 .subtitles h4 {
   color: white;
 }
@@ -141,7 +136,6 @@ input[type='submit'] {
 
 img {
   width: 100%;
-  height: 95%;
 }
 
 .image-container {
