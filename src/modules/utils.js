@@ -8,4 +8,24 @@ const fetchMovies = async () => {
   
     return allMovies;
   };
-  export { MoviesApi, fetchMovies };
+  
+
+const detailsContainer = document.querySelector('.details-wrapper');
+const commentsContainer = document.querySelector('.all-comments');
+
+const truncateSummary = (string, limit) => {
+  if (string.length > limit) {
+    return string.substring(0, limit);
+  }
+  return string;
+};
+
+export {
+  involvementApi,
+  MoviesApi,
+  detailsContainer,
+  commentsContainer,
+  truncateSummary,
+  fetchMovies
+};
+
