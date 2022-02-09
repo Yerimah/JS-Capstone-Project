@@ -4,6 +4,9 @@ import {
   detailsContainer,
   commentsContainer,
   truncateSummary,
+  userNameInput,
+  userCommentInput,
+  postCommentsBtn,
 }
 from './utils.js';
 
@@ -14,6 +17,7 @@ const openCommentsPopup = async (id) => {
   const movieName = movieData.name;
   const movieImage = movieData.image.medium;
   const movieLanguage = movieData.language;
+  const movieDownload = movieData.officialSite;
   const movieRating = movieData.rating.average;
   const movieSummary = truncateSummary(movieData.summary, 350);
 
@@ -28,12 +32,13 @@ const openCommentsPopup = async (id) => {
   });
 
   const commentsHTML = `
-    
       <button class="close-btn">X</button>
       <div class="top-container">
         <div class="image-and-download">
           <img class="tv-show-image" src="${movieImage}">
-          <button class="download-btn" type="button">Download</button>
+          <button class="download-btn" type="button">
+            <a class="download-link" href="${movieDownload}" target="_blank">Download</a>
+          </button>
         </div>
         <div class="tv-show-info">
           <h3 class="tv-show-title">${movieName}</h3>
@@ -50,18 +55,22 @@ const openCommentsPopup = async (id) => {
           </div>
         </div>
       </div>
-    
-  `;
+    `;
   detailsContainer.innerHTML = commentsHTML;
 };
+
+postCommentsBtn.addEventListener('click', () => {
+  // console.log(userNameInput.value);
+  // console.log(userCommentInput.value);
+});
 
 export const postComments = async (id) => {
   await fetch(`${involvementApi}/comments?item_id=${id}`, {
     method: 'POST',
     body: JSON.stringify({
-      item_id: '101',
-      username: "Somebody's Name",
-      comment: "Somebody's comment",
+      item_id: '100',
+      username: `"${userNameInput.value}"`,
+      comment: `"${userCommentInput.value}"`,
     }),
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
@@ -72,9 +81,10 @@ export const postComments = async (id) => {
 export const getComments = async (id) => {
   const response = await fetch(`${involvementApi}/comments?item_id=${id}`);
   const commentsData = await response.json();
+  const reversedData = commentsData.reverse();
 
   let allComments = '';
-  commentsData.forEach((comment) => {
+  reversedData.forEach((comment) => {
     allComments
     += `
       <div class="single-comment">
