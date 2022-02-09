@@ -1,6 +1,7 @@
 const involvementApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Rddf0xwSVTLNIiHbS9z7';
 const MoviesApi = 'https://api.tvmaze.com/shows';
-const commentsContainer = document.querySelector('.comments-popup');
+const detailsContainer = document.querySelector('.details-wrapper');
+const commentsContainer = document.querySelector('.all-comments');
 
 const truncateSummary = (string, limit) => {
   if (string.length > limit) {
@@ -10,5 +11,9 @@ const truncateSummary = (string, limit) => {
 };
 
 export {
-  involvementApi, MoviesApi, commentsContainer, truncateSummary,
+  involvementApi,
+  MoviesApi,
+  detailsContainer,
+  commentsContainer,
+  truncateSummary,
 };
