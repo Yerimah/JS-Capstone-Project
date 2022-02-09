@@ -27,12 +27,17 @@ body {
   width: 100%;
 }
 
+.subtitles {
+  display: flex;
+  justify-content: space-between;
+}
+
 .subtitles h4 {
   color: white;
   font-size: 16px;
 }
 
-.movies-btn {
+.movie-btn {
   display: flex;
   justify-content: space-between;
 }
@@ -41,6 +46,14 @@ body {
   background-color: green;
   color: white;
   padding: 5px;
+  border: none;
+}
+
+.common-btn {
+  background-color: white;
+  color: black;
+  padding: 5px;
+  border: none;
 }
 
 @media only screen and (min-width: 768px) {

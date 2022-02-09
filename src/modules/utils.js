@@ -15,6 +15,7 @@ const userNameInput = document.querySelector('.comment-nameInput');
 const userCommentInput = document.querySelector('.comment-insights');
 const postCommentsBtn = document.querySelector('.add-comment-btn');
 const submissionFail = document.querySelector('.submission-fail');
+const mainContainer = document.querySelector('.main')
 
 const truncateSummary = (string, limit) => {
   if (string.length > limit) {
@@ -22,6 +23,9 @@ const truncateSummary = (string, limit) => {
   }
   return string;
 };
+
+
+
 
 export {
   involvementApi,
@@ -34,4 +38,5 @@ export {
   userCommentInput,
   postCommentsBtn,
   submissionFail,
+  mainContainer
 };

@@ -1,5 +1,6 @@
 import './style.css';
 import logoImage from './assets/Logo.png';
+import { getLikes } from './modules/displaylikes.js'
 
 import {
   fetchMovies,
@@ -9,6 +10,7 @@ import {
   userCommentInput,
   postCommentsBtn,
   submissionFail,
+  mainContainer,
 } from './modules/utils.js';
 import display from './modules/display.js';
 
@@ -46,3 +48,9 @@ postCommentsBtn.addEventListener('click', () => {
 
 openCommentsPopup(22);
 getComments(100);
+
+mainContainer.addEventListener('click', (e) => {
+    if(e.target.className === 'fa fa-heart') {
+        
+    }
+})
