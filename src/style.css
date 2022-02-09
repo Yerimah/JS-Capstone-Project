@@ -43,7 +43,6 @@ body {
   padding: 5px;
 }
 
-
 .nav-items {
   color: white;
   text-decoration: none;
@@ -131,7 +130,7 @@ input[type="submit"] {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 1;
+  bottom: 0;
   backdrop-filter: blur(10px);
   z-index: 1111;
   background-color: rgba(0, 0, 0, 0.3);
@@ -506,8 +505,4 @@ img {
     max-width: 600px;
     padding: 5px 20px;
   }
-
-  /* .big-comments-div {
-    padding-bottom: 2000px;
-  } */
 }

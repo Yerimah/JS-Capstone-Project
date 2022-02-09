@@ -5,19 +5,20 @@ import {
   fetchMovies,
   // involvementApi,
   // MoviesApi,
-  userNameInput,
-  userCommentInput,
-  postCommentsBtn,
-  submissionFail,
+  // userNameInput,
+  // userCommentInput,
+  // postCommentsBtn,
+  // commentsButton,
+  // submissionFail,
   mainContainer,
-  commentsButton,
   bigCommentsDiv,
-  detailsContainer
+  detailsContainer,
 } from './modules/utils.js';
 
 import display from './modules/display.js';
 
-import openCommentsPopup, { postComments, getComments } from './modules/comments.js';
+// postComments, (to be added to line below)
+import openCommentsPopup, { getComments } from './modules/comments.js';
 
 // import { displayData } from './modules/reservation.js';
 
@@ -39,19 +40,18 @@ document.querySelector('.logo').innerHTML = `<a href="#"><img class="logoImg" sr
 // });
 
 mainContainer.addEventListener('click', (event) => {
-  if (event.target.className === "common-btn") {
-    let commentID = event.target.id
+  if (event.target.className === 'common-btn') {
+    const commentID = event.target.id;
     openCommentsPopup(commentID);
     bigCommentsDiv.style.display = 'block';
   }
-})
+});
 
 detailsContainer.addEventListener('click', (event) => {
-  if (event.target.className === "close-btn") {
-    console.log('Close Btn')
+  if (event.target.className === 'close-btn') {
     bigCommentsDiv.style.display = 'none';
   }
-})
+});
 
 // postCommentsBtn.addEventListener('click', () => {
 //   if (userNameInput.value !== '' && userCommentInput.value !== '') {
