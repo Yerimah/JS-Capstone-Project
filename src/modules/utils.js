@@ -23,5 +23,5 @@ export {
   userNameInput,
   userCommentInput,
   postCommentsBtn,
-  submissionFail
+  submissionFail,
 };
