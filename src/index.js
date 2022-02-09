@@ -1,11 +1,20 @@
 import './style.css';
 import logoImage from './assets/Logo.png';
 
-import { fetchMovies } from './modules/utils.js';
+import {
+  fetchMovies,
+  // involvementApi,
+  // MoviesApi,
+  userNameInput,
+  userCommentInput,
+  postCommentsBtn,
+  submissionFail,
+} from './modules/utils.js';
 import display from './modules/display.js';
 
 import openCommentsPopup, { postComments, getComments } from './modules/comments.js';
 
+// import { displayData } from './modules/reservation.js';
 
 document.querySelector('.logo').innerHTML = `<a href="#"><img class="logoImg" src="${logoImage}" alt="Cinimash" /></a>`;
 
@@ -15,17 +24,6 @@ const starter = async () => {
 };
 
 starter();
-
-// import { displayData } from './modules/reservation.js';
-  
-import {
-  // involvementApi,
-  // MoviesApi,
-  userNameInput,
-  userCommentInput,
-  postCommentsBtn,
-  submissionFail,
-} from './modules/utils.js';
 
 // import { displayData } from './modules/reservation.js';
 
