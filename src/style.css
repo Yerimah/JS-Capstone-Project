@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap");
 
 * {
   margin: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: black;
   color: white;
 }
@@ -62,18 +62,18 @@ footer {
 }
 
 .heading {
-  padding: 10px  0;
+  padding: 10px 0;
 }
 
 .news {
   text-align: center;
 }
 
-input[type='email'] {
+input[type="email"] {
   padding: 10px;
 }
 
-input[type='submit'] {
+input[type="submit"] {
   background: rgb(240, 8, 8);
   border: none;
   color: white;
@@ -98,7 +98,7 @@ input[type='submit'] {
   padding-bottom: 25px;
 }
 
-.comments-wrapper {
+.comments-popup {
   background-color: rgba(34, 34, 34, 0.25);
 }
 
@@ -140,7 +140,7 @@ input[type='submit'] {
 
 .tv-show-info {
   margin-top: 30px;
-  padding: 0 20%;
+  padding: 0 10%;
 }
 
 .tv-show-title {
@@ -160,6 +160,67 @@ input[type='submit'] {
 
 .summary-div {
   text-align: justify;
+}
+
+.comments-header,
+.add-comments-header {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.all-comments {
+  height: 50vh;
+  overflow-y: auto;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.single-comment {
+  width: 80%;
+  margin: 7px auto;
+  background-color: whitesmoke;
+  color: green;
+  padding: 2.5%;
+}
+
+/* //////// SAVE BEFORE PUSHING //////// */
+.add-comments-form {
+  padding-bottom: 50px;
+}
+
+.comments-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 550px;
+}
+
+.comment-nameInput {
+  padding: 10px;
+  outline: none;
+}
+
+.comment-insights {
+  padding: 10px;
+  height: 120px;
+}
+
+::placeholder {
+  font-family: poppins, sans-serif;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.add-comment-btn {
+  background-color: green;
+  border: none;
+  padding: 7px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 /* [MEDIA QUERIES] COMMENTS POP-UP */
@@ -236,5 +297,10 @@ input[type='submit'] {
   .block {
     display: flex;
     flex-flow: column;
+  }
+
+  .single-comment {
+    max-width: 600px;
+    padding: 5px 20px;
   }
 }
