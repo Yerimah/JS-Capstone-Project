@@ -49,7 +49,7 @@ mainContainer.addEventListener('click', (event) => {
 detailsContainer.addEventListener('click', (event) => {
   if (event.target.className === "close-btn") {
     console.log('Close Btn')
-    
+    bigCommentsDiv.style.display = 'none';
   }
 })
 
