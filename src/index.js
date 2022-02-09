@@ -9,7 +9,12 @@ import {
   userCommentInput,
   postCommentsBtn,
   submissionFail,
+  mainContainer,
+  commentsButton,
+  bigCommentsDiv,
+  detailsContainer
 } from './modules/utils.js';
+
 import display from './modules/display.js';
 
 import openCommentsPopup, { postComments, getComments } from './modules/comments.js';
@@ -33,16 +38,31 @@ document.querySelector('.logo').innerHTML = `<a href="#"><img class="logoImg" sr
 //   displayData(2);
 // });
 
-postCommentsBtn.addEventListener('click', () => {
-  if (userNameInput.value !== '' && userCommentInput.value !== '') {
-    postComments(100);
-    userNameInput.value = '';
-    userCommentInput.value = '';
-  } else {
-    submissionFail.innerHTML = 'Submission failed. Please try again.';
+mainContainer.addEventListener('click', (event) => {
+  if (event.target.className === "common-btn") {
+    let commentID = event.target.id
+    openCommentsPopup(commentID);
+    bigCommentsDiv.style.display = 'block';
   }
-  getComments(100);
-});
+})
 
-openCommentsPopup(22);
+detailsContainer.addEventListener('click', (event) => {
+  if (event.target.className === "close-btn") {
+    console.log('Close Btn')
+    
+  }
+})
+
+// postCommentsBtn.addEventListener('click', () => {
+//   if (userNameInput.value !== '' && userCommentInput.value !== '') {
+//     postComments(100);
+//     userNameInput.value = '';
+//     userCommentInput.value = '';
+//   } else {
+//     submissionFail.innerHTML = 'Submission failed. Please try again.';
+//   }
+//   getComments(100);
+// });
+
+openCommentsPopup(7);
 getComments(100);

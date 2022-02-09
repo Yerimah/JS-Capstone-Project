@@ -269,8 +269,24 @@ input[type="submit"] {
   padding-bottom: 25px;
 }
 
+.big-comments-div {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: max-content;
+  /* padding-bottom: 20000px; */
+  backdrop-filter: blur(10px);
+  z-index: 1111;
+  background-color: rgba(0, 0, 0, 0.486);
+  width: 100%;
+}
+
 .comments-popup {
-  background-color: rgba(34, 34, 34, 0.25);
+  position: relative;
+  background-color: rgba(25, 26, 25, 0.25);
 }
 
 .image-and-download {
@@ -486,5 +502,9 @@ img {
   .single-comment {
     max-width: 600px;
     padding: 5px 20px;
+  }
+
+  .big-comments-div {
+    padding-bottom: 2000px;
   }
 }
