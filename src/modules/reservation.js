@@ -1,5 +1,6 @@
 import {MoviesApi} from './utils.js';
 
+
 // eslint-disable-next-line import/prefer-default-export
 export const displayData = async (id) => {
   const respone = await fetch(`${MoviesApi}/${id}`);

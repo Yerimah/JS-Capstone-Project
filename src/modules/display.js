@@ -1,20 +1,27 @@
 const display = (movies) => {
-  movies.forEach((e) => {
+  movies.forEach((e, index) => {
     const list = document.querySelector('#main');
-    list.innerHTML += `
+    if(index < 24) {
+        list.innerHTML += `
       <div class="grid-items">
       <ul class="image-card">
-      <img src="${e.image.original}" width="300px" height="400px" alt="">
+      <img src="${e.image.medium}" alt="">
       </ul>
       <div class="subtitles">
       <h4>${e.name} <i class="fa fa-heart"></i></h4>
-      
-      
+
       </div>
-      <button id="button">Comments</i></button>
+      <div class="movie-btn">
+      <button class="common-btn" id="${e.id}">Comments</i></button>
+      <button class="reserve-btn" id="R${e.id}">Reservation</i></button>
+       </div> 
       </div>
     `;
+    }
+    
   });
+
+  
 };
 
 export default display;

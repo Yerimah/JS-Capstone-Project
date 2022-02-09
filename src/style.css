@@ -11,6 +11,39 @@ body {
   background-color: black;
 }
 
+.navlist {
+  display: none;
+}
+
+#main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 0 50px;
+}
+
+.image-card img {
+  width: 100%;
+}
+
+.subtitles h4 {
+  color: white;
+  font-size: 16px;
+}
+
+.movies-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reserve-btn {
+  background-color: green;
+  color: white;
+  padding: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+
 header {
   display: flex;
   align-items: center;
@@ -153,4 +186,6 @@ img {
 .block {
   display: flex;
   flex-flow: column;
+}
+
 }
