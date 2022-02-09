@@ -1,11 +1,11 @@
 const display = (movies) => {
   movies.forEach((e, index) => {
-    const list = document.querySelector('#main');
+    const list = document.querySelector('.main');
     if (index < 24) {
       list.innerHTML += `
       <div class="grid-items">
       <ul class="image-card">
-      <img src="${e.image.medium}" alt="">
+      <img class="movie-art" src="${e.image.medium}" alt="">
       </ul>
       <div class="subtitles">
       <h4>${e.name} <i class="fa fa-heart"></i></h4>
