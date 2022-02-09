@@ -1,8 +1,8 @@
 const display = (movies) => {
   movies.forEach((e, index) => {
     const list = document.querySelector('#main');
-    if(index < 24) {
-        list.innerHTML += `
+    if (index < 24) {
+      list.innerHTML += `
       <div class="grid-items">
       <ul class="image-card">
       <img src="${e.image.medium}" alt="">
@@ -18,10 +18,7 @@ const display = (movies) => {
       </div>
     `;
     }
-    
   });
-
-  
 };
 
 export default display;

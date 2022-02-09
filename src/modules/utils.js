@@ -3,9 +3,9 @@
 const MoviesApi = 'https://api.tvmaze.com/shows';
 
 const fetchMovies = async () => {
-    const response = await fetch(MoviesApi);
-    const allMovies = await response.json();
-  
-    return allMovies;
-  };
-  export { MoviesApi, fetchMovies };
+  const response = await fetch(MoviesApi);
+  const allMovies = await response.json();
+
+  return allMovies;
+};
+export { MoviesApi, fetchMovies };

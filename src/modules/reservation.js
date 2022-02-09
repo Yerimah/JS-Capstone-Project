@@ -1,5 +1,4 @@
-import {MoviesApi} from './utils.js';
-
+import { MoviesApi } from './utils.js';
 
 // eslint-disable-next-line import/prefer-default-export
 export const displayData = async (id) => {
