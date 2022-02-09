@@ -374,12 +374,13 @@ img {
 
 .comment-nameInput {
   padding: 10px;
-  outline: none;
+  outline-color: green;
 }
 
 .comment-insights {
   padding: 10px;
   height: 120px;
+  outline-color: green;
 }
 
 ::placeholder {
@@ -395,6 +396,15 @@ img {
   color: white;
   font-size: 20px;
   font-weight: 700;
+}
+
+.download-link {
+  color: white;
+  text-decoration: none;
+}
+
+.submission-fail {
+  color: red;
 }
 
 /* [MEDIA QUERIES] COMMENTS POP-UP */

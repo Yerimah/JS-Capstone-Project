@@ -11,6 +11,10 @@ const fetchMovies = async () => {
 
 const detailsContainer = document.querySelector('.details-wrapper');
 const commentsContainer = document.querySelector('.all-comments');
+const userNameInput = document.querySelector('.comment-nameInput');
+const userCommentInput = document.querySelector('.comment-insights');
+const postCommentsBtn = document.querySelector('.add-comment-btn');
+const submissionFail = document.querySelector('.submission-fail');
 
 const truncateSummary = (string, limit) => {
   if (string.length > limit) {
@@ -26,4 +30,8 @@ export {
   commentsContainer,
   truncateSummary,
   fetchMovies,
+  userNameInput,
+  userCommentInput,
+  postCommentsBtn,
+  submissionFail,
 };
