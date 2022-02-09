@@ -2,9 +2,8 @@
 import { involvementApi, MoviesApi } from './utils.js';
 
 const popUp = document.createElement('div');
-popUp.className = 'pop-up';
+popUp.className = 'reserve-pop-up';
 const footer = document.querySelector('footer');
-document.body.insertBefore(popUp, footer);
 
 const addReservation = async (id, Username, startDate, endDate) => {
   const reservation = {
@@ -57,10 +56,10 @@ export const displayData = async (id) => {
   const MovieDuration = result.runtime;
   const Movierating = result.rating.average;
   const MovieCover = result.image.original;
-
+  document.body.insertBefore(popUp, footer);
   const popUpContent = document.createElement('div');
-  popUpContent.className = 'pop-content';
-  popUpContent.innerHTML = `<div class= image-container><img class='reserve-img'src=${MovieCover} alt = 'cover picture'></div>
+  popUpContent.className = 'res-pop-content';
+  popUpContent.innerHTML = `<div class= image-container><img class='reserve-img'src=${MovieCover} alt = 'cover picture'></div><button class='res-close-btn'>X</button>
     <div class='description'><h2 class='heading'>${MovieName}</h2><div class=details><div class='block'><span><strong>Language</strong>: ${MovieLanguage}</span>
     <span><strong>Genre</strong>: ${MovieGenre[0]} | ${MovieGenre[1]} | ${MovieGenre[2]}</span></div><div class='block'><span><strong>Duration</strong>: ${MovieDuration} minutes</span>
     <span><strong>Ratings</strong>: ${Movierating} / 10</span></div></div><div class='reserve-post'><h3 class='heading h-reserve'>Reservations</h3><div class='res-container'></div></div><div class='reserve-form'><h3 class='heading'>Add Reservation</h3><form id='res-form'><input type='text' id='reserver' placeholder='Enter your name'>
@@ -74,6 +73,11 @@ export const displayData = async (id) => {
   const form = document.getElementById('res-form');
   const reserveContainer = document.querySelector('.res-container');
   const resHeader = document.querySelector('.h-reserve');
+  const closeBtn = document.querySelector('.res-close-btn');
+  closeBtn.addEventListener('click', () => {
+    document.body.removeChild(popUp);
+    window.location.reload();
+  });
   DisplayReservations(id, reserveContainer);
   reserveCounter(id, resHeader);
   form.addEventListener('submit', (e) => {

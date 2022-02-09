@@ -262,28 +262,47 @@ input[type="submit"] {
   justify-content: center;
 }
 
-.pop-up {
+.reserve-pop-up {
   position: absolute;
   display: flex;
+  overflow-y: scroll;
   justify-content: center;
   align-items: center;
   top: 0;
   left: 0;
-  right: 0;
   width: 100vw;
-  z-index: 111;
-  background-color: rgba(83, 81, 81, 0.1);
-  backdrop-filter: blur(5px);
+  height: auto;
+  padding-bottom: 10000px;
+  backdrop-filter: blur(10px);
+  z-index: 1111;
+  background-color: rgba(14, 13, 13, 0.9);
 }
 
-.pop-content {
+.res-pop-content {
   position: relative;
   padding: 50px;
+  margin-top: 10px;
   width: 90vw;
+  height: 100%;
   border-radius: 15px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  background-color: rgb(25, 26, 25);
+}
+
+.res-close-btn {
+  font-size: 40px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 14px;
+  margin-right: 55px;
+  cursor: pointer;
+  color: rgb(19, 129, 19);
 }
 
 .top-container {

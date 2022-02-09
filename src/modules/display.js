@@ -13,7 +13,7 @@ const display = (movies) => {
       </div>
       <div class="movie-btn">
       <button class="common-btn" id="${e.id}">Comments</i></button>
-      <button class="reserve-btn" id="R${e.id}">Reservation</i></button>
+      <button class="reserve-btn" data-target="${e.id}">Reservation</i></button>
        </div> 
       </div>
     `;

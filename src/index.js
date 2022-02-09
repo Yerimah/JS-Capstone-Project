@@ -9,10 +9,13 @@ import {
   userCommentInput,
   postCommentsBtn,
   submissionFail,
+  mainContainer,
 } from './modules/utils.js';
 import display from './modules/display.js';
 
 import openCommentsPopup, { postComments, getComments } from './modules/comments.js';
+
+import { displayData } from './modules/reservation.js';
 
 // import { displayData } from './modules/reservation.js';
 
@@ -25,10 +28,14 @@ const starter = async () => {
 
 starter();
 
-// import { displayData } from './modules/reservation.js';
-
 document.querySelector('.logo').innerHTML = `<a href="#"><img class="logoImg" src="${logoImage}" alt="Cinimash" /></a>`;
 
+mainContainer.addEventListener('click', (e) => {
+  if (e.target.className === 'reserve-btn') {
+    const id = e.target.getAttribute('data-target');
+    displayData(id);
+  }
+});
 // window.addEventListener('DOMContentLoaded', () => {
 //   displayData(2);
 // });
