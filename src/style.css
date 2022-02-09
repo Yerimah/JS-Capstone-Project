@@ -185,3 +185,8 @@ input[type='date'] {
 #res-btn:hover {
   background-color: rgba(13, 202, 13, 0.7);
 }
+
+.res-container {
+  height: 150px;
+  overflow-y: scroll;
+}
