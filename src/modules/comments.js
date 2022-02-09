@@ -3,7 +3,7 @@ import {
   involvementApi,
   detailsContainer,
   commentsContainer,
-  truncateSummary
+  truncateSummary,
 }
 from './utils.js';
 
@@ -59,40 +59,31 @@ export const postComments = async (id) => {
   await fetch(`${involvementApi}/comments?item_id=${id}`, {
     method: 'POST',
     body: JSON.stringify({
-      "item_id": "77",
-      "username": "Somebody's Name",
-      "comment": "Somebody's comment"
+      item_id: '101',
+      username: "Somebody's Name",
+      comment: "Somebody's comment",
     }),
     headers: {
-      'Content-Type': 'application/json; charset=UTF-8'
-    }, 
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
   });
-  
-}
+};
 
 export const getComments = async (id) => {
   const response = await fetch(`${involvementApi}/comments?item_id=${id}`);
   const commentsData = await response.json();
-  console.log(commentsData);
-  let allComments = ``;
-  commentsData.forEach(comment => {
-    allComments += 
-    `
+
+  let allComments = '';
+  commentsData.forEach((comment) => {
+    allComments
+    += `
       <div class="single-comment">
         <div class="comment-date">${comment.creation_date}</div>
         <p class="name-and-message"><strong>${comment.username}: </strong>${comment.comment}</p>
       </div>
-    `
+    `;
   });
   commentsContainer.innerHTML = allComments;
-  console.log(allComments);
-}
+};
 
 export { openCommentsPopup as default };
-
-// `
-// <div class="single-comment">
-//   <div class="comment-date">2022-02-09</div>
-//   <p class="name-and-message"><strong>Jane Austen: </strong>This is my nice comment. This is my nice comment. </p>
-//  </div>
-// `

@@ -12,8 +12,8 @@ const truncateSummary = (string, limit) => {
 
 export {
   involvementApi,
-  MoviesApi, 
-  detailsContainer, 
+  MoviesApi,
+  detailsContainer,
   commentsContainer,
-  truncateSummary
+  truncateSummary,
 };
