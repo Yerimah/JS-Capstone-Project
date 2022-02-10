@@ -1,5 +1,7 @@
 import './style.css';
 import display from './modules/display.js';
+import logoImage from './assets/Logo.png';
+import { updateLikes, postLikes } from './modules/displaylikes.js';
 
 import
 {
@@ -26,6 +28,12 @@ import
 from './modules/comments.js';
 
 LogoContainer.innerHTML = cinimashLogo;
+
+import display from './modules/display.js';
+
+import { displayData } from './modules/reservation.js';
+
+// import { displayData } from './modules/reservation.js';
 
 const starter = async () => {
   const data = await fetchMovies();
@@ -59,6 +67,13 @@ postCommentsBtn.addEventListener('click', async (event) => {
   }
 });
 
+mainContainer.addEventListener('click', (e) => {
+  if (e.target.className === 'reserve-btn') {
+    const id = e.target.getAttribute('data-target');
+    displayData(id);
+  }
+});
+    
 detailsContainer.addEventListener('click', (event) => {
   if (event.target.className === 'close-btn') {
     bigCommentsDiv.style.display = 'none';
@@ -71,4 +86,14 @@ userNameInput.addEventListener('click', () => {
 
 userCommentInput.addEventListener('click', () => {
   submissionFail.innerHTML = '';
+});
+
+mainContainer.addEventListener('click', async (e) => {
+  if (e.target.className === 'fa fa-heart bot') {
+    const str = e.target.id;
+    const id = parseInt(str, 10);
+    await postLikes(id);
+    const container = e.target.parentElement.nextElementSibling;
+    await updateLikes(id, container);
+  }
 });

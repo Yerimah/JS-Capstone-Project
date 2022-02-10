@@ -11,6 +11,7 @@ const userCommentInput = document.querySelector('.comment-insights');
 const postCommentsBtn = document.querySelector('.add-comment-btn');
 const submissionFail = document.querySelector('.submission-fail');
 const mainContainer = document.querySelector('.main');
+const commentsButton = document.querySelector('.common-btn');
 const bigCommentsDiv = document.querySelector('.big-comments-div');
 const commentsCounter = document.querySelector('.comments-counter');
 
