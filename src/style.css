@@ -56,6 +56,23 @@ body {
   border: none;
 }
 
+.counter {
+  width: 50px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  color: white;
+  pointer-events: none;
+}
+
+.bot::before {
+  background: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+
 @media only screen and (min-width: 768px) {
   header {
     display: flex;
@@ -95,10 +112,6 @@ body {
     display: flex;
     flex-direction: column;
   }
-
-  /* .subtitles h4 {
-    color: white;
-  } */
 
   footer {
     bottom: 0;

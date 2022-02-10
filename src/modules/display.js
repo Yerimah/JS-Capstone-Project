@@ -1,3 +1,5 @@
+import { updateLikes } from "./displaylikes";
+
 const display = (movies) => {
   movies.forEach((e, index) => {
     const list = document.querySelector('.main');
@@ -10,8 +12,9 @@ const display = (movies) => {
       <div class="subtitles">
       <h4>${e.name}</h4>    
       <span class="Like-container">
-      <i class="fa fa-heart"></i>
-      <span id="num${e.id}" class="likenum">5</span>
+      <span><i id="${e.id}" class="fa fa-heart bot"></i></span>
+      <input type="number" id="${e.id}" class="counter" value="" name="">
+       
       <span id="${e.id}">Likes</span>
       </span>   
 
@@ -22,6 +25,8 @@ const display = (movies) => {
        </div> 
       </div>
     `;
+
+
     }
   });
 };

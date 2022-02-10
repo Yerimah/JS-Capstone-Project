@@ -1,6 +1,6 @@
 import './style.css';
 import logoImage from './assets/Logo.png';
-import { getLikes } from './modules/displaylikes.js'
+import { updateLikes, postLikes, getLikes } from './modules/displaylikes.js';
 
 import {
   fetchMovies,
@@ -18,7 +18,6 @@ import openCommentsPopup, { postComments, getComments } from './modules/comments
 
 // import { displayData } from './modules/reservation.js';
 
-document.querySelector('.logo').innerHTML = `<a href="#"><img class="logoImg" src="${logoImage}" alt="Cinimash" /></a>`;
 
 const starter = async () => {
   const data = await fetchMovies();
@@ -27,13 +26,8 @@ const starter = async () => {
 
 starter();
 
-// import { displayData } from './modules/reservation.js';
 
 document.querySelector('.logo').innerHTML = `<a href="#"><img class="logoImg" src="${logoImage}" alt="Cinimash" /></a>`;
-
-// window.addEventListener('DOMContentLoaded', () => {
-//   displayData(2);
-// });
 
 postCommentsBtn.addEventListener('click', () => {
   if (userNameInput.value !== '' && userCommentInput.value !== '') {
@@ -46,11 +40,17 @@ postCommentsBtn.addEventListener('click', () => {
   getComments(100);
 });
 
-openCommentsPopup(22);
-getComments(100);
+
+// postLikes(17);
+
+getLikes();
 
 mainContainer.addEventListener('click', (e) => {
-    if(e.target.className === 'fa fa-heart') {
-        
+    if(e.target.className === 'fa fa-heart bot') {
+        const id = parseInt(e.target.id);
+        postLikes(id);
+        const container = e.target.parentElement.nextElementSibling
+        updateLikes(id, container);
+
     }
 })
