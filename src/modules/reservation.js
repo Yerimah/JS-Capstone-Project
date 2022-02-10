@@ -59,7 +59,7 @@ export const displayData = async (id) => {
   document.body.insertBefore(popUp, footer);
   const popUpContent = document.createElement('div');
   popUpContent.className = 'res-pop-content';
-  popUpContent.innerHTML = `<div class= image-container><img class='reserve-img'src=${MovieCover} alt = 'cover picture'></div><button class='res-close-btn'>X</button>
+  popUpContent.innerHTML = `<div class='res-image-container'><img class='reserve-img'src=${MovieCover} alt = 'cover picture'></div><button class='res-close-btn'>X</button>
     <div class='description'><h2 class='heading'>${MovieName}</h2><div class=details><div class='block'><span><strong>Language</strong>: ${MovieLanguage}</span>
     <span><strong>Genre</strong>: ${MovieGenre[0]} | ${MovieGenre[1]} | ${MovieGenre[2]}</span></div><div class='block'><span><strong>Duration</strong>: ${MovieDuration} minutes</span>
     <span><strong>Ratings</strong>: ${Movierating} / 10</span></div></div><div class='reserve-post'><h3 class='heading h-reserve'>Reservations</h3><div class='res-container'></div></div><div class='reserve-form'><h3 class='heading'>Add Reservation</h3><form id='res-form'><input type='text' id='reserver' placeholder='Enter your name'>

@@ -171,8 +171,8 @@ body {
     width: 100%;
   }
 
-  .image-container {
-    width: 30%;
+  .res-image-container {
+    width: 44%;
     height: auto;
   }
 
@@ -263,9 +263,8 @@ input[type="submit"] {
 }
 
 .reserve-pop-up {
-  position: absolute;
+  position: fixed;
   display: flex;
-  overflow-y: scroll;
   justify-content: center;
   align-items: center;
   top: 0;
@@ -280,7 +279,9 @@ input[type="submit"] {
 
 .res-pop-content {
   position: relative;
-  padding: 50px;
+  font-size: 9px;
+  padding: 10px;
+  padding-bottom: 20px;
   margin-top: 10px;
   width: 90vw;
   height: 100%;
@@ -341,7 +342,8 @@ input[type="submit"] {
 .description {
   display: flex;
   flex-flow: column;
-  gap: 30px;
+  gap: 0;
+  margin-bottom: 10px;
 }
 
 .reserve-img {
@@ -579,4 +581,40 @@ input[type='date'] {
 .res-container {
   height: 150px;
   overflow-y: scroll;
+}
+
+/* media querries for reservation popup */
+@media screen and (max-width: 767px) {
+  .res-image-container {
+    width: 50%;
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 689px) {
+  .res-image-container {
+    width: 40%;
+    height: 40%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .res-image-container {
+    width: 25%;
+    height: 50%;
+  }
+
+  .res-container {
+    height: 50px;
+  }
+
+  #res-form {
+    height: 72%;
+  }
+
+  #res-btn {
+    padding: 10px;
+    font-size: 13px;
+    width: 74px;
+  }
 }
