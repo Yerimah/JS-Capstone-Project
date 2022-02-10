@@ -7,10 +7,10 @@ import {
   // involvementApi,
   // MoviesApi,
 
-  userNameInput,
-  userCommentInput,
-  postCommentsBtn,
-  submissionFail,
+  // userNameInput,
+  // userCommentInput,
+  // postCommentsBtn,
+  // submissionFail,
   mainContainer,
   // userNameInput,
   // userCommentInput,
@@ -20,18 +20,13 @@ import {
   bigCommentsDiv,
   detailsContainer,
 
->
 } from './modules/utils.js';
 
 import display from './modules/display.js';
 
-
-import { postComments, getComments } from './modules/comments.js';
 // postComments, (to be added to line below)
-import openCommentsPopup, { getComments } from './modules/comments.js';
 
 import { displayData } from './modules/reservation.js';
-
 
 // import { displayData } from './modules/reservation.js';
 
@@ -44,14 +39,15 @@ starter();
 
 document.querySelector('.logo').innerHTML = `<a href="#"><img class="logoImg" src="${logoImage}" alt="Cinimash" /></a>`;
 
-
-postCommentsBtn.addEventListener('click', () => {
-  if (userNameInput.value !== '' && userCommentInput.value !== '') {
-    postComments(100);
-    userNameInput.value = '';
-    userCommentInput.value = '';
-  } else {
-    submissionFail.innerHTML = 'Submission failed. Please try again.';
+// postCommentsBtn.addEventListener('click', () => {
+//   if (userNameInput.value !== '' && userCommentInput.value !== '') {
+//     postComments(100);
+//     userNameInput.value = '';
+//     userCommentInput.value = '';
+//   } else {
+//     submissionFail.innerHTML = 'Submission failed. Please try again.';
+//   }
+// });
 
 mainContainer.addEventListener('click', (e) => {
   if (e.target.className === 'reserve-btn') {
@@ -63,21 +59,19 @@ mainContainer.addEventListener('click', (e) => {
 //   displayData(2);
 // });
 
-mainContainer.addEventListener('click', (event) => {
-  if (event.target.className === 'common-btn') {
-    const commentID = event.target.id;
-    openCommentsPopup(commentID);
-    bigCommentsDiv.style.display = 'block';
-  }
-});
+// mainContainer.addEventListener('click', (event) => {
+//   if (event.target.className === 'common-btn') {
+//     const commentID = event.target.id;
+//     openCommentsPopup(commentID);
+//     bigCommentsDiv.style.display = 'block';
+//   }
+// });
 
 detailsContainer.addEventListener('click', (event) => {
   if (event.target.className === 'close-btn') {
     bigCommentsDiv.style.display = 'none';
-
   }
 });
-
 
 // postLikes(17);
 
@@ -101,5 +95,3 @@ mainContainer.addEventListener('click', (e) => {
 //   }
 //   getComments(100);
 // });
-
-
