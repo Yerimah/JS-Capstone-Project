@@ -18,7 +18,6 @@ const fetchMovies = async () => {
   return allMovies;
 };
 
-
 const truncateSummary = (string, limit) => {
   if (string.length > limit) {
     return string.substring(0, limit);

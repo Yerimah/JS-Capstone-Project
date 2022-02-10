@@ -32,7 +32,7 @@ describe('test the reservation counter function', () => {
   test('check if counter number is being displayed', async () => {
     const div = document.createElement('h3');
     const count = await reserveCounter(1, div);
-    expect(div.innerHTML).toEqual('<span>(2)</span>');
+    expect(div.innerHTML).toEqual('(2)');
     expect(count).toEqual(2);
   });
 });

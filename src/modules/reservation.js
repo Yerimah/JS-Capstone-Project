@@ -32,17 +32,25 @@ const DisplayReservations = async (id, content) => {
   });
   content.appendChild(resContainer);
 };
-
+const updateResDom = async (id, content, div) => {
+  const response = await fetch(`${involvementApi}/reservations?item_id=${id}`);
+  const result = await response.json();
+  const recent = result.length - 1;
+  const resText = document.createElement('p');
+  resText.className = 'reservation-text';
+  resText.innerHTML += `${result[recent].date_start} - ${result[recent].date_end} by ${result[recent].username}`;
+  content.prepend(resText);
+  div.textContent = `(${result.length})`;
+};
 export const reserveCounter = async (id, div) => {
   const response = await fetch(`${involvementApi}/reservations?item_id=${id}`);
   const result = await response.json();
-  let counter = 0;
-  for (let i = 0; i < result.length; i += 1) {
-    counter += 1;
+  const counter = result.length;
+  if (counter === undefined) {
+    div.textContent = ' (0)';
+  } else {
+    div.textContent = `(${counter})`;
   }
-  const counterPlace = document.createElement('span');
-  counterPlace.innerHTML = `(${counter})`;
-  div.appendChild(counterPlace);
   return counter;
 };
 
@@ -62,7 +70,7 @@ export const displayData = async (id) => {
   popUpContent.innerHTML = `<div class='res-image-container'><img class='reserve-img'src=${MovieCover} alt = 'cover picture'></div><button class='res-close-btn'>X</button>
     <div class='description'><h2 class='heading'>${MovieName}</h2><div class=details><div class='block'><span><strong>Language</strong>: ${MovieLanguage}</span>
     <span><strong>Genre</strong>: ${MovieGenre[0]} | ${MovieGenre[1]} | ${MovieGenre[2]}</span></div><div class='block'><span><strong>Duration</strong>: ${MovieDuration} minutes</span>
-    <span><strong>Ratings</strong>: ${Movierating} / 10</span></div></div><div class='reserve-post'><h3 class='heading h-reserve'>Reservations</h3><div class='res-container'></div></div><div class='reserve-form'><h3 class='heading'>Add Reservation</h3><form id='res-form'><input type='text' id='reserver' placeholder='Enter your name'>
+    <span><strong>Ratings</strong>: ${Movierating} / 10</span></div></div><div class='reserve-post'><h3 class='heading'>Reservations<span class='h-reserve'></span></h3><div class='res-container'></div></div><div class='reserve-form'><h3 class='heading'>Add Reservation</h3><form id='res-form'><input type='text' id='reserver' placeholder='Enter your name'>
     <label for='start-date'>Start Date</label><input type='date' id='start-date' placeholder='YYYY/MM/DD'>
     <label for='start-date'>End Date</label><input type='date' id='end-date' placeholder='End-date YYYY/MM/DD'>
     <input type='submit' value='Reserve' id='res-btn'></form></div></div>`;
@@ -80,9 +88,10 @@ export const displayData = async (id) => {
   });
   DisplayReservations(id, reserveContainer);
   reserveCounter(id, resHeader);
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    addReservation(id, username.value, start.value, end.value);
+    await addReservation(id, username.value, start.value, end.value);
+    await updateResDom(id, reserveContainer, resHeader);
     form.reset();
   });
 };
