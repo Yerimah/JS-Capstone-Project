@@ -1,5 +1,5 @@
 const display = (movies) => {
-  movies.forEach(async (e, index) => {
+  movies.forEach((e, index) => {
     const list = document.querySelector('.main');
     if (index < 24) {
       list.innerHTML += `
@@ -12,7 +12,7 @@ const display = (movies) => {
       <span class="Like-container">
       <span><i id="${e.id}" class="fa fa-heart bot"></i></span>
       
-      <input type="number" id="c-${e.id}" class="counter" value="" name="">
+      <input type="number" id="${e.id}" class="counter" value="" name="">
        
       <span id="${e.id}">Likes</span>
       </span>   

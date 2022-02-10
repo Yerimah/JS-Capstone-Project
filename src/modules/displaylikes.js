@@ -24,30 +24,4 @@ export const updateLikes = async (id, display) => {
       display.value = `${movie.likes}`;
     }
   });
-
-  // let result = 0;
-  // storeLikes.forEach((e) => {
-  //     if(e.item_id === id) {
-  //         result = e.likes;
-  //     }
-  // })
-  // console.log(updateLikes)
 };
-
-// export const addElement = (e) => {
-//     const currentNumber = e.innerText;
-//     e.innerText = parseInt(currentNumber, 10) + 1
-
-// }
-// console.log(addElement)
-
-// mainContainer.addEventListener('click', (e) => {
-//   if (e.target.className === 'bot') {
-//     const likeCount = document.getElementsByClassName('counter');
-//     // likeCount.innerHTML = data[0].likes;
-
-//     // likeCount.value = parseInt(likeCount.value) + 1;
-
-//     console.log(likeCount.id)
-//   }
-// });
