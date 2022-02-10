@@ -3,7 +3,7 @@ import { involvementApi } from './utils.js';
 export const getLikes = async () => {
   const response = await fetch(`${involvementApi}/likes`);
   const data = await response.json();
-  return data[0].likes;
+  return data;
 };
 
 export const postLikes = async (id) => {
