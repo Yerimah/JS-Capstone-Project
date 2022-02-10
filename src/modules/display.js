@@ -1,5 +1,3 @@
-import { updateLikes } from "./displaylikes";
-
 const display = (movies) => {
   movies.forEach((e, index) => {
     const list = document.querySelector('.main');
@@ -25,8 +23,6 @@ const display = (movies) => {
        </div> 
       </div>
     `;
-
-
     }
   });
 };

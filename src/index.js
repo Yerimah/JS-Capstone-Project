@@ -1,6 +1,6 @@
 import './style.css';
 import logoImage from './assets/Logo.png';
-import { updateLikes, postLikes, getLikes } from './modules/displaylikes.js';
+import { updateLikes, postLikes } from './modules/displaylikes.js';
 
 import {
   fetchMovies,
@@ -14,10 +14,9 @@ import {
 } from './modules/utils.js';
 import display from './modules/display.js';
 
-import openCommentsPopup, { postComments, getComments } from './modules/comments.js';
+import { postComments, getComments } from './modules/comments.js';
 
 // import { displayData } from './modules/reservation.js';
-
 
 const starter = async () => {
   const data = await fetchMovies();
@@ -25,7 +24,6 @@ const starter = async () => {
 };
 
 starter();
-
 
 document.querySelector('.logo').innerHTML = `<a href="#"><img class="logoImg" src="${logoImage}" alt="Cinimash" /></a>`;
 
@@ -40,17 +38,14 @@ postCommentsBtn.addEventListener('click', () => {
   getComments(100);
 });
 
-
 // postLikes(17);
 
-getLikes();
-
 mainContainer.addEventListener('click', (e) => {
-    if(e.target.className === 'fa fa-heart bot') {
-        const id = parseInt(e.target.id);
-        postLikes(id);
-        const container = e.target.parentElement.nextElementSibling
-        updateLikes(id, container);
-
-    }
-})
+  if (e.target.className === 'fa fa-heart bot') {
+    const str = e.target.id;
+    const id = parseInt(str, 10);
+    postLikes(id);
+    const container = e.target.parentElement.nextElementSibling;
+    updateLikes(id, container);
+  }
+});
