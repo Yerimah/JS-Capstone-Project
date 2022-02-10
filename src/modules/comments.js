@@ -6,7 +6,6 @@ import {
   truncateSummary,
   userNameInput,
   userCommentInput,
-  postCommentsBtn,
 }
 from './utils.js';
 
@@ -58,11 +57,6 @@ const openCommentsPopup = async (id) => {
     `;
   detailsContainer.innerHTML = commentsHTML;
 };
-
-postCommentsBtn.addEventListener('click', () => {
-  // console.log(userNameInput.value);
-  // console.log(userCommentInput.value);
-});
 
 export const postComments = async (id) => {
   await fetch(`${involvementApi}/comments?item_id=${id}`, {

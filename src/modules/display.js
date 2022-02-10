@@ -9,7 +9,6 @@ const display = (movies) => {
       </ul>
       <div class="subtitles">
       <h4>${e.name} <i class="fa fa-heart"></i></h4>
-
       </div>
       <div class="movie-btn">
       <button class="common-btn" id="${e.id}">Comments</i></button>

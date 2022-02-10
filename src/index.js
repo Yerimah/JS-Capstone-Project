@@ -5,15 +5,21 @@ import {
   fetchMovies,
   // involvementApi,
   // MoviesApi,
-  userNameInput,
-  userCommentInput,
-  postCommentsBtn,
-  submissionFail,
+  // userNameInput,
+  // userCommentInput,
+  // postCommentsBtn,
+  // commentsButton,
+  // submissionFail,
   mainContainer,
+  bigCommentsDiv,
+  detailsContainer,
+
 } from './modules/utils.js';
+
 import display from './modules/display.js';
 
-import openCommentsPopup, { postComments, getComments } from './modules/comments.js';
+// postComments, (to be added to line below)
+import openCommentsPopup, { getComments } from './modules/comments.js';
 
 import { displayData } from './modules/reservation.js';
 
@@ -40,16 +46,30 @@ mainContainer.addEventListener('click', (e) => {
 //   displayData(2);
 // });
 
-postCommentsBtn.addEventListener('click', () => {
-  if (userNameInput.value !== '' && userCommentInput.value !== '') {
-    postComments(100);
-    userNameInput.value = '';
-    userCommentInput.value = '';
-  } else {
-    submissionFail.innerHTML = 'Submission failed. Please try again.';
+mainContainer.addEventListener('click', (event) => {
+  if (event.target.className === 'common-btn') {
+    const commentID = event.target.id;
+    openCommentsPopup(commentID);
+    bigCommentsDiv.style.display = 'block';
   }
-  getComments(100);
 });
 
-openCommentsPopup(22);
+detailsContainer.addEventListener('click', (event) => {
+  if (event.target.className === 'close-btn') {
+    bigCommentsDiv.style.display = 'none';
+  }
+});
+
+// postCommentsBtn.addEventListener('click', () => {
+//   if (userNameInput.value !== '' && userCommentInput.value !== '') {
+//     postComments(100);
+//     userNameInput.value = '';
+//     userCommentInput.value = '';
+//   } else {
+//     submissionFail.innerHTML = 'Submission failed. Please try again.';
+//   }
+//   getComments(100);
+// });
+
+openCommentsPopup(7);
 getComments(100);
