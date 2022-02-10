@@ -215,7 +215,7 @@ img {
 }
 
 .all-comments {
-  height: 50vh;
+  max-height: 50vh;
   overflow-y: auto;
   padding-bottom: 20px;
   margin-bottom: 30px;
@@ -275,6 +275,7 @@ img {
 
 .submission-fail {
   color: red;
+  text-align: center;
 }
 
 /* [MEDIA QUERIES] FOR MAIN CONTENT */

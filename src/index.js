@@ -1,29 +1,32 @@
 import './style.css';
-import logoImage from './assets/Logo.png';
-
-import {
-  fetchMovies,
-  // involvementApi,
-  // MoviesApi,
-  // userNameInput,
-  // userCommentInput,
-  // postCommentsBtn,
-  // commentsButton,
-  // submissionFail,
-  mainContainer,
-  bigCommentsDiv,
-  detailsContainer,
-} from './modules/utils.js';
-
 import display from './modules/display.js';
 
-// postComments, (to be added to line below)
-import openCommentsPopup, { getComments } from './modules/comments.js';
+import 
+  {
+    cinimashLogo,
+    fetchMovies,
+    userNameInput,
+    userCommentInput,
+    submissionFail,
+    postCommentsBtn,
+    mainContainer,
+    bigCommentsDiv,
+    detailsContainer,
+    LogoContainer,
+  } 
+from './modules/utils.js';
+  
+import 
+  { 
+    openCommentsPopup, 
+    postComments, 
+    getComments, 
+    countComments 
+  } 
+from './modules/comments.js';
 
-// import { displayData } from './modules/reservation.js';
-
-document.querySelector('.logo').innerHTML = `<a href="#"><img class="logoImg" src="${logoImage}" alt="Cinimash" /></a>`;
-
+LogoContainer.innerHTML = cinimashLogo;
+  
 const starter = async () => {
   const data = await fetchMovies();
   await display(data);
@@ -31,21 +34,30 @@ const starter = async () => {
 
 starter();
 
-// import { displayData } from './modules/reservation.js';
-
-document.querySelector('.logo').innerHTML = `<a href="#"><img class="logoImg" src="${logoImage}" alt="Cinimash" /></a>`;
-
-// window.addEventListener('DOMContentLoaded', () => {
-//   displayData(2);
-// });
-
-mainContainer.addEventListener('click', (event) => {
+mainContainer.addEventListener('click', async (event) => {
   if (event.target.className === 'common-btn') {
     const commentID = event.target.id;
-    openCommentsPopup(commentID);
     bigCommentsDiv.style.display = 'block';
+    await openCommentsPopup(commentID);
+    await getComments(commentID);
+    await countComments(commentID);
   }
 });
+
+postCommentsBtn.addEventListener('click', async (event) => {
+  const allComments = event.target.parentElement.parentElement.previousElementSibling;
+  const singleComment = allComments.querySelector('.single-comment')
+  if (userNameInput.value !== '' && userCommentInput.value !== '') {
+    const movieID = singleComment.id;
+    await postComments(movieID);
+    await getComments(movieID);
+    await countComments(movieID);
+    userNameInput.value = '';
+    userCommentInput.value = '';
+  } else {
+    submissionFail.innerHTML = 'Submission failed. Please try again.';
+  }
+})
 
 detailsContainer.addEventListener('click', (event) => {
   if (event.target.className === 'close-btn') {
@@ -53,16 +65,10 @@ detailsContainer.addEventListener('click', (event) => {
   }
 });
 
-// postCommentsBtn.addEventListener('click', () => {
-//   if (userNameInput.value !== '' && userCommentInput.value !== '') {
-//     postComments(100);
-//     userNameInput.value = '';
-//     userCommentInput.value = '';
-//   } else {
-//     submissionFail.innerHTML = 'Submission failed. Please try again.';
-//   }
-//   getComments(100);
-// });
+userNameInput.addEventListener('click', () => {
+  submissionFail.innerHTML = '';
+})
 
-openCommentsPopup(7);
-getComments(100);
+userCommentInput.addEventListener('click', () => {
+  submissionFail.innerHTML = '';
+})
