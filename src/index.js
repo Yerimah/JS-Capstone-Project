@@ -1,32 +1,32 @@
 import './style.css';
 import display from './modules/display.js';
 
-import 
-  {
-    cinimashLogo,
-    fetchMovies,
-    userNameInput,
-    userCommentInput,
-    submissionFail,
-    postCommentsBtn,
-    mainContainer,
-    bigCommentsDiv,
-    detailsContainer,
-    LogoContainer,
-  } 
+import
+{
+  cinimashLogo,
+  fetchMovies,
+  userNameInput,
+  userCommentInput,
+  submissionFail,
+  postCommentsBtn,
+  mainContainer,
+  bigCommentsDiv,
+  detailsContainer,
+  LogoContainer,
+}
 from './modules/utils.js';
-  
-import 
-  { 
-    openCommentsPopup, 
-    postComments, 
-    getComments, 
-    countComments 
-  } 
+
+import
+{
+  openCommentsPopup,
+  postComments,
+  getComments,
+  countComments,
+}
 from './modules/comments.js';
 
 LogoContainer.innerHTML = cinimashLogo;
-  
+
 const starter = async () => {
   const data = await fetchMovies();
   await display(data);
@@ -46,7 +46,7 @@ mainContainer.addEventListener('click', async (event) => {
 
 postCommentsBtn.addEventListener('click', async (event) => {
   const allComments = event.target.parentElement.parentElement.previousElementSibling;
-  const singleComment = allComments.querySelector('.single-comment')
+  const singleComment = allComments.querySelector('.single-comment');
   if (userNameInput.value !== '' && userCommentInput.value !== '') {
     const movieID = singleComment.id;
     await postComments(movieID);
@@ -57,7 +57,7 @@ postCommentsBtn.addEventListener('click', async (event) => {
   } else {
     submissionFail.innerHTML = 'Submission failed. Please try again.';
   }
-})
+});
 
 detailsContainer.addEventListener('click', (event) => {
   if (event.target.className === 'close-btn') {

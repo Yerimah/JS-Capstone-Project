@@ -77,11 +77,11 @@ export const getComments = async (id) => {
   const commentsData = await response.json();
   let reversedData;
   let allComments = '';
-  if(commentsData.length > 0) {
+  if (commentsData.length > 0) {
     reversedData = commentsData.reverse();
     reversedData.forEach((comment) => {
-      allComments += 
-      `
+      allComments
+      += `
         <div class="single-comment" id='${id}'>
           <div class="comment-date">${comment.creation_date}</div>
           <p class="name-and-message"><strong>${comment.username}: </strong>${comment.comment}</p>
@@ -102,4 +102,4 @@ export const countComments = async (id) => {
   } else {
     commentsCounter.innerHTML = `(${numberOfComments})`;
   }
-}
+};
