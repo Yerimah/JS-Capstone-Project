@@ -1,7 +1,7 @@
 import './style.css';
-//import display from './modules/display.js';
+// import display from './modules/display.js';
 import display from './modules/display.js';
-import logoImage from './assets/Logo.png';
+// import logoImage from './assets/Logo.png';
 import { updateLikes, postLikes } from './modules/displaylikes.js';
 
 import
@@ -28,10 +28,9 @@ import
 }
 from './modules/comments.js';
 
-LogoContainer.innerHTML = cinimashLogo;
-
-
 import { displayData } from './modules/reservation.js';
+
+LogoContainer.innerHTML = cinimashLogo;
 
 // import { displayData } from './modules/reservation.js';
 
@@ -73,7 +72,7 @@ mainContainer.addEventListener('click', (e) => {
     displayData(id);
   }
 });
-    
+
 detailsContainer.addEventListener('click', (event) => {
   if (event.target.className === 'close-btn') {
     bigCommentsDiv.style.display = 'none';
