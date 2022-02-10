@@ -67,8 +67,8 @@ detailsContainer.addEventListener('click', (event) => {
 
 userNameInput.addEventListener('click', () => {
   submissionFail.innerHTML = '';
-})
+});
 
 userCommentInput.addEventListener('click', () => {
   submissionFail.innerHTML = '';
-})
+});
