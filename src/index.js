@@ -1,4 +1,5 @@
 import './style.css';
+//import display from './modules/display.js';
 import display from './modules/display.js';
 import logoImage from './assets/Logo.png';
 import { updateLikes, postLikes } from './modules/displaylikes.js';
@@ -29,7 +30,6 @@ from './modules/comments.js';
 
 LogoContainer.innerHTML = cinimashLogo;
 
-import display from './modules/display.js';
 
 import { displayData } from './modules/reservation.js';
 

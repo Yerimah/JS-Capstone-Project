@@ -746,7 +746,7 @@ input[type='text'],
 input[type='date'] {
   height: 40px;
   width: 300px;
-  margin: 10px 0;
+  margin: 10px auto;
   border: none;
   border-radius: 10px;
 }
