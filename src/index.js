@@ -75,13 +75,13 @@ detailsContainer.addEventListener('click', (event) => {
 
 // postLikes(17);
 
-mainContainer.addEventListener('click', (e) => {
+mainContainer.addEventListener('click', async (e) => {
   if (e.target.className === 'fa fa-heart bot') {
     const str = e.target.id;
     const id = parseInt(str, 10);
-    postLikes(id);
+    await postLikes(id);
     const container = e.target.parentElement.nextElementSibling;
-    updateLikes(id, container);
+    await updateLikes(id, container);
   }
 });
 

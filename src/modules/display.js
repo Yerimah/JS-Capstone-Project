@@ -1,3 +1,5 @@
+import { updateLikes } from './displaylikes.js';
+
 const display = (movies) => {
   movies.forEach((e, index) => {
     const list = document.querySelector('.main');
@@ -24,6 +26,12 @@ const display = (movies) => {
       </div>
     `;
     }
+  });
+
+  const cont = document.querySelectorAll('.counter');
+  cont.forEach((input, index) => {
+    const unique = index + 1;
+    updateLikes(unique, input);
   });
 };
 
