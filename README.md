@@ -35,12 +35,9 @@ clone repo: `git clone https://github.com/Yerimah/JS-Capstone-Project`
 then
 `cd JS-Capstone-Project`
 
-To run locally
-`npm run start`
-
-### Install
-
-run `npm install` to install dependencies
+- Open the project with your code editor
+- Run `npm install` to install all dependencies
+- Run `npm start` and go to `http://localhost:8080//` to launch the server.
 
 ## Authors
 
