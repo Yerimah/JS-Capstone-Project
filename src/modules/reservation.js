@@ -26,11 +26,9 @@ const DisplayReservations = async (id, content) => {
   const response = await fetch(`${involvementApi}/reservations?item_id=${id}`);
   const result = await response.json();
   result.reverse();
-  const resContainer = document.createElement('div');
   result.forEach((data) => {
-    resContainer.innerHTML += `<p class='reservation-text'>${data.date_start} - ${data.date_end} by ${data.username}</p>`;
+    content.innerHTML += `<p class='reservation-text'>${data.date_start} - ${data.date_end} by ${data.username}</p>`;
   });
-  content.appendChild(resContainer);
 };
 const updateResDom = async (id, content, div) => {
   const response = await fetch(`${involvementApi}/reservations?item_id=${id}`);
@@ -40,18 +38,17 @@ const updateResDom = async (id, content, div) => {
   resText.className = 'reservation-text';
   resText.innerHTML += `${result[recent].date_start} - ${result[recent].date_end} by ${result[recent].username}`;
   content.prepend(resText);
-  div.textContent = `(${result.length})`;
+  const resCounter = content.childElementCount;
+  div.textContent = `(${resCounter})`;
 };
-export const reserveCounter = async (id, div) => {
-  const response = await fetch(`${involvementApi}/reservations?item_id=${id}`);
-  const result = await response.json();
-  const counter = result.length;
-  if (counter === undefined) {
+export const reserveCounter = (div, content) => {
+  if (content.childElementCount === 0) {
     div.textContent = ' (0)';
   } else {
-    div.textContent = `(${counter})`;
+    const ResNumber = content.childElementCount;
+    div.textContent = `(${ResNumber})`;
+    return ResNumber;
   }
-  return counter;
 };
 
 export const displayData = async (id) => {
@@ -86,8 +83,8 @@ export const displayData = async (id) => {
     document.body.removeChild(popUp);
     window.location.reload();
   });
-  DisplayReservations(id, reserveContainer);
-  reserveCounter(id, resHeader);
+  await DisplayReservations(id, reserveContainer);
+  await reserveCounter(resHeader, reserveContainer);
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     await addReservation(id, username.value, start.value, end.value);
