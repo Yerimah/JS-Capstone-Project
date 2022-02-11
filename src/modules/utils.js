@@ -15,7 +15,7 @@ const fetchMovies = async () => {
   const response = await fetch(MoviesApi);
   const allMovies = await response.json();
   return allMovies;
-}; 
+};
 
 const truncateSummary = (string, limit) => {
   if (string.length > limit) {

@@ -92,9 +92,8 @@ export const getComments = async (id) => {
 };
 
 export const countComments = async (id) => {
-
   const response = await fetch(`${involvementApi}/comments?item_id=${id}`);
-  
+
   const commentsCount = await response.json();
   const numberOfComments = commentsCount.length;
 
@@ -102,6 +101,6 @@ export const countComments = async (id) => {
     document.querySelector('.comments-counter').innerHTML = '(0)';
   } else {
     document.querySelector('.comments-counter').innerHTML = `(${numberOfComments})`;
-    return numberOfComments;
   }
+  return numberOfComments;
 };
