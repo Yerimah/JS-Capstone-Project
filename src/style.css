@@ -6,6 +6,15 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
+button {
+  cursor: pointer;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: black;
@@ -150,6 +159,7 @@ body {
     border: none;
     color: white;
     padding: 10px;
+    cursor: pointer;
   }
 
   .list {
@@ -160,7 +170,17 @@ body {
     display: flex;
     padding-top: 20px;
     margin-top: 40px;
+    gap: 40px;
     justify-content: center;
+  }
+
+  .s-icon {
+    margin: 5px;
+    font-size: 20px;
+  }
+
+  .icon-link:hover {
+    color: rgb(4, 187, 4);
   }
 
   .pop-up {
@@ -213,13 +233,17 @@ body {
   }
 }
 
+#active {
+  color: rgb(4, 163, 4);
+}
+
 .nav-items {
   color: white;
   text-decoration: none;
 }
 
 .nav-items:hover {
-  color: green;
+  color: rgb(3, 160, 3);
 }
 
 #main {
@@ -277,6 +301,10 @@ input[type="submit"] {
 
 .list {
   list-style-type: none;
+}
+
+.list-item:hover {
+  color: rgb(4, 173, 4);
 }
 
 .social {
