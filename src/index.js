@@ -1,32 +1,36 @@
 import './style.css';
-import logoImage from './assets/Logo.png';
+// import display from './modules/display.js';
+import display from './modules/display.js';
+// import logoImage from './assets/Logo.png';
 import { updateLikes, postLikes } from './modules/displaylikes.js';
 
-import {
+import
+{
+  cinimashLogo,
   fetchMovies,
-  // involvementApi,
-  // MoviesApi,
-
-  // userNameInput,
-  // userCommentInput,
-  // postCommentsBtn,
-  // submissionFail,
+  userNameInput,
+  userCommentInput,
+  submissionFail,
+  postCommentsBtn,
   mainContainer,
-  // userNameInput,
-  // userCommentInput,
-  // postCommentsBtn,
-  // commentsButton,
-  // submissionFail,
   bigCommentsDiv,
   detailsContainer,
+  LogoContainer,
+}
+from './modules/utils.js';
 
-} from './modules/utils.js';
-
-import display from './modules/display.js';
-
-// postComments, (to be added to line below)
+import
+{
+  openCommentsPopup,
+  postComments,
+  getComments,
+  countComments,
+}
+from './modules/comments.js';
 
 import { displayData } from './modules/reservation.js';
+
+LogoContainer.innerHTML = cinimashLogo;
 
 // import { displayData } from './modules/reservation.js';
 
@@ -37,17 +41,30 @@ const starter = async () => {
 
 starter();
 
-document.querySelector('.logo').innerHTML = `<a href="#"><img class="logoImg" src="${logoImage}" alt="Cinimash" /></a>`;
+mainContainer.addEventListener('click', async (event) => {
+  if (event.target.className === 'common-btn') {
+    const commentID = event.target.id;
+    bigCommentsDiv.style.display = 'block';
+    await openCommentsPopup(commentID);
+    await getComments(commentID);
+    await countComments(commentID);
+  }
+});
 
-// postCommentsBtn.addEventListener('click', () => {
-//   if (userNameInput.value !== '' && userCommentInput.value !== '') {
-//     postComments(100);
-//     userNameInput.value = '';
-//     userCommentInput.value = '';
-//   } else {
-//     submissionFail.innerHTML = 'Submission failed. Please try again.';
-//   }
-// });
+postCommentsBtn.addEventListener('click', async (event) => {
+  const allComments = event.target.parentElement.parentElement.previousElementSibling;
+  const singleComment = allComments.querySelector('.single-comment');
+  if (userNameInput.value !== '' && userCommentInput.value !== '') {
+    const movieID = singleComment.id;
+    await postComments(movieID);
+    await getComments(movieID);
+    await countComments(movieID);
+    userNameInput.value = '';
+    userCommentInput.value = '';
+  } else {
+    submissionFail.innerHTML = 'Submission failed. Please try again.';
+  }
+});
 
 mainContainer.addEventListener('click', (e) => {
   if (e.target.className === 'reserve-btn') {
@@ -55,17 +72,6 @@ mainContainer.addEventListener('click', (e) => {
     displayData(id);
   }
 });
-// window.addEventListener('DOMContentLoaded', () => {
-//   displayData(2);
-// });
-
-// mainContainer.addEventListener('click', (event) => {
-//   if (event.target.className === 'common-btn') {
-//     const commentID = event.target.id;
-//     openCommentsPopup(commentID);
-//     bigCommentsDiv.style.display = 'block';
-//   }
-// });
 
 detailsContainer.addEventListener('click', (event) => {
   if (event.target.className === 'close-btn') {
@@ -73,7 +79,13 @@ detailsContainer.addEventListener('click', (event) => {
   }
 });
 
-// postLikes(17);
+userNameInput.addEventListener('click', () => {
+  submissionFail.innerHTML = '';
+});
+
+userCommentInput.addEventListener('click', () => {
+  submissionFail.innerHTML = '';
+});
 
 mainContainer.addEventListener('click', async (e) => {
   if (e.target.className === 'fa fa-heart bot') {
@@ -84,14 +96,3 @@ mainContainer.addEventListener('click', async (e) => {
     await updateLikes(id, container);
   }
 });
-
-// postCommentsBtn.addEventListener('click', () => {
-//   if (userNameInput.value !== '' && userCommentInput.value !== '') {
-//     postComments(100);
-//     userNameInput.value = '';
-//     userCommentInput.value = '';
-//   } else {
-//     submissionFail.innerHTML = 'Submission failed. Please try again.';
-//   }
-//   getComments(100);
-// });

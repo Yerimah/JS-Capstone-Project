@@ -1,6 +1,9 @@
+import logoImage from '../assets/Logo.png';
+
+const cinimashLogo = `<a href="#"><img class="logoImg" src="${logoImage}" alt="Cinimash" /></a>`;
 const involvementApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Rddf0xwSVTLNIiHbS9z7';
 const MoviesApi = 'https://api.tvmaze.com/shows';
-
+const LogoContainer = document.querySelector('.logo');
 const detailsContainer = document.querySelector('.details-wrapper');
 const commentsContainer = document.querySelector('.all-comments');
 const userNameInput = document.querySelector('.comment-nameInput');
@@ -8,9 +11,9 @@ const userCommentInput = document.querySelector('.comment-insights');
 const postCommentsBtn = document.querySelector('.add-comment-btn');
 const submissionFail = document.querySelector('.submission-fail');
 const mainContainer = document.querySelector('.main');
-
-const commentsButton = document.querySelector('.common-btn');
+// const commentsButton = document.querySelector('.common-btn');
 const bigCommentsDiv = document.querySelector('.big-comments-div');
+const commentsCounter = document.querySelector('.comments-counter');
 
 const fetchMovies = async () => {
   const response = await fetch(MoviesApi);
@@ -26,6 +29,7 @@ const truncateSummary = (string, limit) => {
 };
 
 export {
+  cinimashLogo,
   involvementApi,
   MoviesApi,
   detailsContainer,
@@ -37,7 +41,7 @@ export {
   postCommentsBtn,
   submissionFail,
   mainContainer,
-  commentsButton,
   bigCommentsDiv,
-
+  commentsCounter,
+  LogoContainer,
 };
