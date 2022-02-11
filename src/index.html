@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://use.fontawesome.com/982d941beb.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>JS Capstone Project</title>
   </head>
   <body>
@@ -14,7 +14,7 @@
       </div>
       <nav>
         <ul class="navlist">
-          <li><a class="nav-items" href="">Movies</a></li>
+          <li><a  id="active" class="nav-items" href="">Movies</a></li>
           <li><a class="nav-items" href="">TV Shows</a></li>
           <li><a class="nav-items" href="">Pricing</a></li>
         </ul>
@@ -23,7 +23,7 @@
 
     
     <section class="main">
-      
+      <!-- Movies section generated dynamically -->
     </section>
     
     <div class="big-comments-div">
@@ -81,26 +81,31 @@
       <div class="stream">
         <h3 class="heading">Streaming live</h3>
         <ul class="list">
-          <li class="list-item">TV shows</li>
-          <li class="list-item">Movies</li>
-          <li class="list-item">Kids</li>
-          <li class="list-item">Originals</li>
+          <li ><a class="list-item" href="#">TV shows</a> </li>
+          <li ><a class="list-item" href="#">Movies</a> </li>
+          <li ><a class="list-item" href="#">Kids</a></li>
+          <li ><a class="list-item" href="#">Originals</a></li>
         </ul>
       </div>
       <div class="question">
         <h3 class="heading">FAQS</h3>
-        <p class="question-text">Reviews</p>
-        <p class="question-text">Pricing</p>
-        <p class="question-text">Supported devices</p>
-        <p class="question-text">Partners</p>
+        <ul class="list">
+          <li><a class="list-item" href="#"><p class="question-text">Reviews</p></a></li>
+          <li><a class="list-item" href="#"><p class="question-text">Pricing</p></a></li>
+          <li><a class="list-item" href="#"><p class="question-text">Supported devices</p></a></li>
+          <li><a class="list-item" href="#"><p class="question-text">Partners</p></a></li>
+        </ul>
       </div>
     </div>
   </div>
   <div class="social">
-    <i class="fab fa-twitter">Twitter</i>
-    <i class="fab fa-youtube">Youtube</i>
-    <i class="fab fa-facebook">Facebook</i>
-    <i class="fab fa-instagram">instagram</i>
+    <a class="icon-link" href="#"><i class=" s-icon fab fa-twitter"></i>Twitter</a>
+    <a class="icon-link" href="#"><i class=" s-icon fab fa-medium"></i>Youtube</a>
+    <a class="icon-link" href="#"><i class=" s-icon fab fa-facebook"></i>Facebook</a>
+    <a class="icon-link" href="#"><i class=" s-icon fab fa-instagram"></i>instagram</a>
+    
+    
+    
   </div>
     </footer>
   </body>
