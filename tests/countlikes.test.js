@@ -1,4 +1,8 @@
-import countLikes from './countlikes.js';
+/**
+ * @jest-environment jsdom
+ */
+
+import countLikes from '../src/modules/countlikes.js';
 
 global.fetch = jest.fn(() => Promise.resolve({
   json: () => Promise.resolve(
