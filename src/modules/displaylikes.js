@@ -25,12 +25,15 @@ export const updateLikes = async (id, display) => {
     }
   });
 };
-
+ export function count() {
+  const main = document.querySelector('.main');
+  const children = main.childElementCount;
+  return children;
+}
 export const countHomeMovies = () => {
   const main = document.querySelector('.main');
   const homeMovs = document.querySelector('.movies-number');
   const children = main.childElementCount;
-
-  homeMovs.textContent = children;
-  console.log(children);
+  homeMovs.textContent = `${count()}`;
+  return children;
 };

@@ -27,7 +27,7 @@ const display = (movies) => {
     `;
     }
   });
-
+  
   countHomeMovies();
 
   const cont = document.querySelectorAll('.counter');
