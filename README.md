@@ -10,11 +10,11 @@ Cinemash users are able to comment, like and make reservations for their favorit
 
 ## Presentation Video
 
-[Link to presentation video]()  
+[Link to presentation video](https://drive.google.com/file/d/1Os5CsONCsoRRJK_VaGkaeFcQMiIkJW20/view?usp=sharing)  
 
 ## Live Demo
 
-[Demo]()
+[Demo](https://cinemash.netlify.app/)
 
 ## Built With
 
