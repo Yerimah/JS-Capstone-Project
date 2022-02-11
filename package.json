@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/Yerimah/Project-Webpack#readme",
   "devDependencies": {
-    "@babel/core": "^7.17.0",
+    "@babel/core": "^7.17.2",
     "@babel/plugin-transform-modules-commonjs": "^7.16.8",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.5.1",
