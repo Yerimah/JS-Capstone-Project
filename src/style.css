@@ -1,7 +1,842 @@
-body {
-    background-color: bisque;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.hello {
-    color: red;
+a {
+  text-decoration: none;
+  color: white;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: black;
+  color: white;
+}
+
+.navlist {
+  display: none;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 0 50px;
+}
+
+.movie-art {
+  width: 100%;
+}
+
+.subtitles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subtitles h4 {
+  color: white;
+  font-size: 16px;
+}
+
+.movie-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reserve-btn {
+  background-color: green;
+  color: white;
+  padding: 5px;
+  border: none;
+}
+
+.common-btn {
+  background-color: white;
+  color: black;
+  padding: 5px;
+  border: none;
+}
+
+.counter {
+  width: 50px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  color: white;
+  pointer-events: none;
+}
+
+.bot::before {
+  background: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.support-container {
+  display: flex;
+  padding: 20px 10px 0 20px;
+  gap: 60px;
+}
+
+.icon-link {
+  margin-right: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 50px 0 50px;
   }
+
+  .logoImg {
+    height: 60px;
+  }
+
+  .navlist {
+    display: flex;
+    list-style-type: none;
+    gap: 50px;
+    font-size: 24px;
+  }
+
+  .nav-items {
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav-items:hover {
+    color: green;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 50px;
+  }
+
+  .grid-items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    bottom: 0;
+    left: 25%;
+    color: white;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .heading {
+    padding: 10px 0;
+  }
+
+  .news {
+    text-align: center;
+  }
+
+  input[type="email"] {
+    padding: 10px;
+  }
+
+  input[type="submit"] {
+    background: rgb(240, 8, 8);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .list {
+    list-style-type: none;
+  }
+
+  .social {
+    display: flex;
+    padding-top: 20px;
+    margin-top: 40px;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .s-icon {
+    margin: 5px;
+    font-size: 20px;
+  }
+
+  .icon-link:hover {
+    color: rgb(4, 187, 4);
+  }
+
+  .pop-up {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 111;
+    background-color: rgba(231, 224, 224, 0.1);
+  }
+
+  .pop-content {
+    position: relative;
+    padding: 50px;
+    width: 90vw;
+    border-radius: 15px;
+    height: 90vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: rgb(85, 83, 83);
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .res-image-container {
+    width: 44%;
+    height: auto;
+  }
+
+  .details {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 100px;
+  }
+
+  .block {
+    display: flex;
+    flex-flow: column;
+  }
+}
+
+#active {
+  color: rgb(4, 163, 4);
+}
+
+.nav-items {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-items:hover {
+  color: rgb(3, 160, 3);
+}
+
+#main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0 50px;
+}
+
+.grid-items {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  bottom: 0;
+  left: 25%;
+  color: white;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.heading {
+  padding: 10px 0;
+}
+
+.news {
+  text-align: center;
+}
+
+input[type="email"] {
+  padding: 10px;
+}
+
+input[type="submit"] {
+  background: rgb(240, 8, 8);
+  border: none;
+  color: white;
+  padding: 10px;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.list-item:hover {
+  color: rgb(4, 173, 4);
+}
+
+.social {
+  display: flex;
+  padding-top: 20px;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.reserve-pop-up {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  padding-bottom: 10000px;
+  backdrop-filter: blur(10px);
+  z-index: 1111;
+  background-color: rgba(14, 13, 13, 0.9);
+}
+
+.res-pop-content {
+  position: relative;
+  font-size: 9px;
+  padding: 10px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  width: 90vw;
+  height: 100%;
+  border-radius: 15px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: rgb(25, 26, 25);
+}
+
+.res-close-btn {
+  font-size: 40px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 14px;
+  margin-right: 55px;
+  cursor: pointer;
+  color: rgb(19, 129, 19);
+}
+
+.top-container {
+  padding-top: 30px;
+  padding-bottom: 25px;
+}
+
+.big-comments-div {
+  display: none;
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(10px);
+  z-index: 1111;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+}
+
+.comments-popup {
+  position: relative;
+  height: 100vh;
+  background-color: rgba(25, 26, 25, 0.25);
+}
+
+.image-and-download {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.tv-show-image {
+  width: 60%;
+  max-width: 400px;
+}
+
+.download-btn {
+  width: 60%;
+  max-width: 400px;
+  margin-top: 10px;
+  background-color: green;
+  border: none;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.description {
+  display: flex;
+  flex-flow: column;
+  gap: 0;
+  margin-bottom: 10px;
+}
+
+.reserve-img {
+  width: 100%;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: green;
+  font-weight: 700;
+  font-size: 3em;
+  position: absolute;
+  right: 0;
+  padding-right: 5%;
+  margin-bottom: 10px;
+}
+
+.tv-show-info {
+  margin-top: 30px;
+  padding: 0 10%;
+}
+
+.tv-show-title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.tv-shows-genres {
+  margin-bottom: 25px;
+}
+
+.lang-and-rating {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.summary-div {
+  text-align: justify;
+}
+
+.comments-header,
+.add-comments-header {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.all-comments {
+  max-height: 50vh;
+  overflow-y: auto;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.single-comment {
+  width: 80%;
+  margin: 7px auto;
+  background-color: whitesmoke;
+  color: green;
+  padding: 2.5%;
+}
+
+.add-comments-form {
+  padding-bottom: 50px;
+}
+
+.comments-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 550px;
+}
+
+.comment-nameInput {
+  padding: 10px;
+  outline-color: green;
+}
+
+.comment-insights {
+  padding: 10px;
+  height: 120px;
+  outline-color: green;
+}
+
+::placeholder {
+  font-family: poppins, sans-serif;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.add-comment-btn {
+  background-color: green;
+  border: none;
+  padding: 7px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.download-link {
+  color: white;
+  text-decoration: none;
+}
+
+.submission-fail {
+  color: red;
+  text-align: center;
+}
+
+.tv-shows-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.tvshows-tvshows {
+  color: white;
+  font-size: 30px;
+}
+
+.movies-number {
+  color: white;
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+/* [MEDIA QUERIES] FOR MAIN CONTENT */
+
+@media only screen and (min-width: 768px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 50px 0 50px;
+  }
+
+  .logoImg {
+    height: 60px;
+  }
+
+  .navlist {
+    display: flex;
+    list-style-type: none;
+    gap: 50px;
+    font-size: 24px;
+  }
+
+  .nav-items {
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav-items:hover {
+    color: green;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 50px;
+  }
+
+  .grid-items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    bottom: 0;
+    left: 25%;
+    color: white;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .heading {
+    padding: 10px 0;
+  }
+
+  .news {
+    text-align: center;
+  }
+
+  input[type="email"] {
+    padding: 10px;
+  }
+
+  input[type="submit"] {
+    background: rgb(240, 8, 8);
+    border: none;
+    color: white;
+    padding: 10px;
+  }
+
+  .list {
+    list-style-type: none;
+  }
+
+  .social {
+    display: flex;
+    padding-top: 20px;
+    margin-top: 40px;
+    justify-content: center;
+  }
+
+  .pop-up {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 111;
+    background-color: rgba(231, 224, 224, 0.1);
+  }
+
+  .pop-content {
+    position: relative;
+    padding: 50px;
+    width: 90vw;
+    border-radius: 15px;
+    height: 90vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: rgb(85, 83, 83);
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .image-container {
+    width: 30%;
+    height: auto;
+  }
+
+  .details {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 100px;
+  }
+
+  .block {
+    display: flex;
+    flex-flow: column;
+  }
+}
+
+/* [MEDIA QUERIES] COMMENTS POP-UP */
+
+@media only screen and (min-width: 800px) {
+  .top-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin-left: 10px;
+  }
+
+  .tv-show-info {
+    margin-top: 0;
+    padding: 20px 5% 0 0;
+    max-width: 550px;
+  }
+
+  .tv-show-image {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .download-btn {
+    width: 100%;
+  }
+
+  .pop-up {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 111;
+    background-color: rgba(231, 224, 224, 0.1);
+  }
+
+  .pop-content {
+    position: relative;
+    padding: 50px;
+    width: 90vw;
+    border-radius: 15px;
+    height: 90vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: rgb(85, 83, 83);
+  }
+
+  img {
+    width: 100%;
+    height: 95%;
+  }
+
+  .image-container {
+    width: 30%;
+    height: auto;
+  }
+
+  .details {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 100px;
+  }
+
+  .block {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .single-comment {
+    max-width: 600px;
+    padding: 5px 20px;
+  }
+}
+
+#res-form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reserve-form {
+  text-align: center;
+}
+
+label {
+  color: white;
+}
+
+input[type="text"],
+input[type="date"] {
+  height: 40px;
+  width: 300px;
+  margin: 10px auto;
+  border: none;
+  border-radius: 10px;
+}
+
+#res-btn {
+  font-weight: bold;
+  font-size: 20px;
+  background-color: rgba(3, 107, 3);
+  width: 150px;
+  padding: 13px;
+  border-radius: 10px;
+  margin-left: 150px;
+  transition: all 1s;
+  cursor: pointer;
+}
+
+#res-btn:hover {
+  background-color: rgba(13, 202, 13, 0.7);
+}
+
+.res-container {
+  height: 150px;
+  overflow-y: scroll;
+}
+
+/* media querries for reservation popup */
+@media screen and (max-width: 767px) {
+  .res-image-container {
+    width: 50%;
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 689px) {
+  .res-image-container {
+    width: 40%;
+    height: 40%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .res-image-container {
+    width: 25%;
+    height: 50%;
+  }
+
+  .res-container {
+    height: 50px;
+  }
+
+  #res-form {
+    height: 72%;
+  }
+
+  #res-btn {
+    padding: 10px;
+    font-size: 13px;
+    width: 74px;
+  }
+}

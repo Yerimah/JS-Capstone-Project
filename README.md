@@ -1,46 +1,49 @@
-# Project-Webpack
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-A basic webpack boilerplate, ready to be used immediately, no configuration needed. It doesn't tell you, which framework or library you should be using, it contains only a handful of modules:
+# Cinemash App(JS Capstone Project)
 
+![Cinemash](https://user-images.githubusercontent.com/71140133/153568771-ab652ae7-d6c1-4e68-b818-9be10af0414b.PNG)
+
+
+The cinemash app is an online curation of blockbuster movies. It allows users to view a library of their favorite movies.
+Cinemash users are able to comment, like and make reservations for their favorite movies.
+
+## Presentation Video
+
+[Link to presentation video](https://drive.google.com/file/d/1Os5CsONCsoRRJK_VaGkaeFcQMiIkJW20/view?usp=sharing)
+
+## Built With
+
+- HTML 
+- CSS
+- Javascript
 - Webpack
-- html-webpack-plugin
-- css-loader
-- style-loader
-- webpack-dev-server
+- Kanban board
+- Jest
 
-Everything else is up to you.
+## Live Demo
 
-## Usage
+[Demo](https://cinemash.netlify.app/)
 
-start by cloning this repository by running:
 
-```
-git clone https://github.com/Yerimah/Project-Webpack.git
-```
 
-cd to the folder
+## Getting Started
 
-```
-cd Project-Webpack
-```
+To get a local copy up and running follow these simple example steps.
 
-run this command to install all the packages needed
+### Prerequisites
 
-```
-npm install
-```
+clone repo: `git clone https://github.com/Yerimah/JS-Capstone-Project`
 
-to run a live server on port 8080 run this command
+then
+`cd JS-Capstone-Project`
 
-```
-npm run start
-```
+- Open the project with your code editor
+- Run `npm install` to install all dependencies
+- Run `npm start` and go to `http://localhost:8080//` to launch the server.
 
-to build your project run:
-
-```
-npm run build
-```
+### Run test
+- Run `npm run test` to run test
 
 ## Authors
 
@@ -50,6 +53,36 @@ npm run build
 - Twitter: [@iamdeewyne](https://twitter.com/iamdeewyne)
 - LinkedIn: [@daniel-yerimah](https://www.linkedin.com/in/daniel-yerimah/)
 
+👤 **Benjamin Semah**
+
+- GitHub: [Benjamin Semah](https://github.com/BenjaminSemah)
+- Twitter: [Benjamin Semah](https://twitter.com/BenjaminSemah)
+- LinkedIn: [Benjamin Semah](https://www.linkedin.com/in/benjaminsemah/)
+
+👤 **Bertrand Mutangana Ishimwe**
+
+- GitHub: [Bertrand Mutangana Ishimwe](https://github.com/BertrandConxy)
+- Twitter: [Bertrand Mutangana Ishimwe](https://twitter.com/BertrandMutanga)
+- LinkedIn: [Bertrand Mutangana Ishimwe](https://www.linkedin.com/in/bertrand-mutangana-024905220/)
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Yerimah/JS-Capstone-Project/issues).
+
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse for the [involvement API](https://www.notion.so/microverse/Involvement-API-869e60b5ad104603aa6db59e08150270
+)
+- TV Maze for the [Tv Maze API](https://www.tvmaze.com/api
+) 
+
+## 📝 License
+
+This project is [MIT](https://github.com/Yerimah/JS-Capstone-Project/blob/dev-branch/MIT.md) licensed.
