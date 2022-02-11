@@ -3,7 +3,7 @@ import { updateLikes, countHomeMovies } from './displaylikes.js';
 const display = (movies) => {
   movies.forEach((e, index) => {
     const list = document.querySelector('.main');
-    if (index < 24) {
+    if (index < 16) {
       list.innerHTML += `
       <div class="grid-items">
         <ul class="image-card">

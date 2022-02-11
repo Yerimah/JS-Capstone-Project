@@ -146,18 +146,18 @@ body {
   }
 
   .heading {
-    padding: 10px  0;
+    padding: 10px 0;
   }
 
   .news {
     text-align: center;
   }
 
-  input[type='email'] {
+  input[type="email"] {
     padding: 10px;
   }
 
-  input[type='submit'] {
+  input[type="submit"] {
     background: rgb(240, 8, 8);
     border: none;
     color: white;
@@ -369,7 +369,7 @@ input[type="submit"] {
   bottom: 0;
   backdrop-filter: blur(10px);
   z-index: 1111;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
 }
 
@@ -599,18 +599,18 @@ input[type="submit"] {
   }
 
   .heading {
-    padding: 10px  0;
+    padding: 10px 0;
   }
 
   .news {
     text-align: center;
   }
 
-  input[type='email'] {
+  input[type="email"] {
     padding: 10px;
   }
 
-  input[type='submit'] {
+  input[type="submit"] {
     background: rgb(240, 8, 8);
     border: none;
     color: white;
@@ -775,8 +775,8 @@ label {
   color: white;
 }
 
-input[type='text'],
-input[type='date'] {
+input[type="text"],
+input[type="date"] {
   height: 40px;
   width: 300px;
   margin: 10px auto;

@@ -80,8 +80,9 @@ export const displayData = async (id) => {
   const resHeader = document.querySelector('.h-reserve');
   const closeBtn = document.querySelector('.res-close-btn');
   closeBtn.addEventListener('click', () => {
+    popUp.innerHTML = '';
     document.body.removeChild(popUp);
-    window.location.reload();
+    
   });
   await DisplayReservations(id, reserveContainer);
   await reserveCounter(resHeader, reserveContainer);
