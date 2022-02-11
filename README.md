@@ -10,11 +10,7 @@ Cinemash users are able to comment, like and make reservations for their favorit
 
 ## Presentation Video
 
-[Link to presentation video](https://drive.google.com/file/d/1Os5CsONCsoRRJK_VaGkaeFcQMiIkJW20/view?usp=sharing)  
-
-## Live Demo
-
-[Demo](https://cinemash.netlify.app/)
+[Link to presentation video](https://drive.google.com/file/d/1Os5CsONCsoRRJK_VaGkaeFcQMiIkJW20/view?usp=sharing)
 
 ## Built With
 
@@ -23,6 +19,13 @@ Cinemash users are able to comment, like and make reservations for their favorit
 - Javascript
 - Webpack
 - Kanban board
+- Jest
+
+## Live Demo
+
+[Demo](https://cinemash.netlify.app/)
+
+
 
 ## Getting Started
 
@@ -38,6 +41,9 @@ then
 - Open the project with your code editor
 - Run `npm install` to install all dependencies
 - Run `npm start` and go to `http://localhost:8080//` to launch the server.
+
+### Run test
+- Run `npm run test` to run test
 
 ## Authors
 
@@ -76,3 +82,7 @@ Give a ⭐️ if you like this project!
 )
 - TV Maze for the [Tv Maze API](https://www.tvmaze.com/api
 ) 
+
+## 📝 License
+
+This project is [MIT](https://github.com/Yerimah/JS-Capstone-Project/blob/dev-branch/MIT.md) licensed.
