@@ -1,12 +1,10 @@
 import './style.css';
-// import display from './modules/display.js';
 import display from './modules/display.js';
-// import logoImage from './assets/Logo.png';
+import logoImage from './assets/Logo.png';
 import { updateLikes, postLikes } from './modules/displaylikes.js';
 
 import
 {
-  cinimashLogo,
   fetchMovies,
   userNameInput,
   userCommentInput,
@@ -30,9 +28,7 @@ from './modules/comments.js';
 
 import { displayData } from './modules/reservation.js';
 
-LogoContainer.innerHTML = cinimashLogo;
-
-// import { displayData } from './modules/reservation.js';
+LogoContainer.innerHTML = `<a href="#"><img class="logoImg" src="${logoImage}" alt="Cinimash" /></a>`;
 
 const starter = async () => {
   const data = await fetchMovies();

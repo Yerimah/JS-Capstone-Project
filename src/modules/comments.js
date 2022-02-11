@@ -6,7 +6,6 @@ import {
   truncateSummary,
   userNameInput,
   userCommentInput,
-  commentsCounter,
 }
 from './utils.js';
 
@@ -93,13 +92,16 @@ export const getComments = async (id) => {
 };
 
 export const countComments = async (id) => {
+
   const response = await fetch(`${involvementApi}/comments?item_id=${id}`);
+  
   const commentsCount = await response.json();
   const numberOfComments = commentsCount.length;
 
   if (numberOfComments === undefined) {
-    commentsCounter.innerHTML = '(0)';
+    document.querySelector('.comments-counter').innerHTML = '(0)';
   } else {
-    commentsCounter.innerHTML = `(${numberOfComments})`;
+    document.querySelector('.comments-counter').innerHTML = `(${numberOfComments})`;
+    return numberOfComments;
   }
 };
