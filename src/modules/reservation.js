@@ -42,13 +42,13 @@ const updateResDom = async (id, content, div) => {
   div.textContent = `(${resCounter})`;
 };
 export const reserveCounter = (div, content) => {
+  const ResNumber = content.childElementCount;
   if (content.childElementCount === 0) {
     div.textContent = ' (0)';
   } else {
-    const ResNumber = content.childElementCount;
     div.textContent = `(${ResNumber})`;
-    return ResNumber;
   }
+  return ResNumber;
 };
 
 export const displayData = async (id) => {
@@ -82,7 +82,6 @@ export const displayData = async (id) => {
   closeBtn.addEventListener('click', () => {
     popUp.innerHTML = '';
     document.body.removeChild(popUp);
-    
   });
   await DisplayReservations(id, reserveContainer);
   await reserveCounter(resHeader, reserveContainer);

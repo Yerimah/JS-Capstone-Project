@@ -25,7 +25,7 @@ export const updateLikes = async (id, display) => {
     }
   });
 };
- export function count() {
+export function count() {
   const main = document.querySelector('.main');
   const children = main.childElementCount;
   return children;

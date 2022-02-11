@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import {count} from '../src/modules/displaylikes.js'
+import { count } from '../src/modules/displaylikes.js';
 
 describe('test for counting items function', () => {
   test('check if it counts and returns the correct items', async () => {
@@ -27,7 +27,7 @@ describe('test for counting items function', () => {
           <button class="reserve-btn" data-target="#">Reservation</i></button>
         </div> 
       </div></main>`;
-      const countMovie = count();
-      expect(countMovie).toBe(1)
+    const countMovie = count();
+    expect(countMovie).toBe(1);
   });
 });
